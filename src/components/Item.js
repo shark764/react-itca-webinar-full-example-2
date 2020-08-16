@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Card,
   CardActionArea,
@@ -13,7 +13,11 @@ import HeadsetIcon from '@material-ui/icons/Headset';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import moment from 'moment';
 
+import { RecordContext } from '../context/RecordContext';
+
 const Item = ({ record }) => {
+  const [, setSelectedRecord] = useContext(RecordContext);
+
   return (
     <Card>
       <CardHeader
@@ -22,7 +26,8 @@ const Item = ({ record }) => {
         subheader={`Added: ${moment(record.createdAt).format('LL')}`}
         subheaderTypographyProps={{ variant: 'subtitle2' }}
       />
-      <CardActionArea onClick={event => console.log('Do something here')}>
+
+      <CardActionArea onClick={event => setSelectedRecord(record)}>
         <CardMedia
           style={{
             height: 0,
@@ -31,6 +36,7 @@ const Item = ({ record }) => {
           image={record.image}
           title={record.title}
         />
+
         <CardContent>
           <Typography gutterBottom variant="h6" color="secondary" component="h4">
             {record.artist}
@@ -89,6 +95,7 @@ const Item = ({ record }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
+
       <CardActions>
         <Button size="small" color="primary" startIcon={<HeadsetIcon />} href={record.listenUrl} target="_blank">
           Listen
