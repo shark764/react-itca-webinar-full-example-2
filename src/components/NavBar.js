@@ -1,5 +1,11 @@
 import React, { useContext } from 'react';
-import { AppBar, Toolbar, Typography, InputBase, Button } from '@material-ui/core';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  InputBase,
+  Button,
+} from '@material-ui/core';
 import { SearchContext } from '../context/SearchContext';
 import { RecordContext } from '../context/RecordContext';
 
@@ -11,11 +17,12 @@ const NavBar = () => {
     <div>
       <AppBar position="static">
         <Toolbar>
-          <Button color="inherit" onClick={event => setSelectedRecord(null)}>
+          <Button color="inherit" onClick={() => setSelectedRecord(null)}>
             <Typography variant="h6" noWrap>
-              Itca Fepade / React Js 2020
+              Itca Fepade / ReactJs 2020
             </Typography>
           </Button>
+
           <div style={{ marginLeft: 32 }}>
             <InputBase
               placeholder="Search…"

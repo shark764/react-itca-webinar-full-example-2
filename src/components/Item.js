@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import {
   Card,
   CardActionArea,
@@ -27,7 +28,7 @@ const Item = ({ record }) => {
         subheaderTypographyProps={{ variant: 'subtitle2' }}
       />
 
-      <CardActionArea onClick={event => setSelectedRecord(record)}>
+      <CardActionArea onClick={() => setSelectedRecord(record)}>
         <CardMedia
           style={{
             height: 0,
@@ -38,7 +39,12 @@ const Item = ({ record }) => {
         />
 
         <CardContent>
-          <Typography gutterBottom variant="h6" color="secondary" component="h4">
+          <Typography
+            gutterBottom
+            variant="h6"
+            color="secondary"
+            component="h4"
+          >
             {record.artist}
           </Typography>
 
@@ -97,15 +103,45 @@ const Item = ({ record }) => {
       </CardActionArea>
 
       <CardActions>
-        <Button size="small" color="primary" startIcon={<HeadsetIcon />} href={record.listenUrl} target="_blank">
+        <Button
+          size="small"
+          color="primary"
+          startIcon={<HeadsetIcon />}
+          href={record.listenUrl}
+          target="_blank"
+        >
           Listen
         </Button>
-        <Button size="small" color="secondary" startIcon={<ShoppingCartIcon />} href={record.buyItUrl} target="_blank">
+        <Button
+          size="small"
+          color="secondary"
+          startIcon={<ShoppingCartIcon />}
+          href={record.buyItUrl}
+          target="_blank"
+        >
           Buy it
         </Button>
       </CardActions>
     </Card>
   );
+};
+
+Item.propTypes = {
+  record: PropTypes.shape({
+    artist: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    studio: PropTypes.string,
+    producer: PropTypes.string,
+    label: PropTypes.string,
+    genre: PropTypes.string,
+    releasedAt: PropTypes.string,
+    duration: PropTypes.number,
+    image: PropTypes.string,
+    createdAt: PropTypes.string,
+    listenUrl: PropTypes.string,
+    buyItUrl: PropTypes.string,
+  }),
 };
 
 export default Item;

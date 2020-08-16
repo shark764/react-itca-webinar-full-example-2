@@ -27,12 +27,20 @@ const Detail = () => {
     <Grid container spacing={8}>
       <Grid item xs={12} sm={6} lg={4} xl={4}>
         <Card>
-          <CardHeader title={record.title} titleTypographyProps={{ color: 'primary' }} />
+          <CardHeader
+            title={record.title}
+            titleTypographyProps={{ color: 'primary' }}
+          />
 
           <hr style={{ margin: '0px 16px' }} />
 
           <CardContent>
-            <Typography variant="body2" color="textPrimary" align="justify" style={{ whiteSpace: 'pre-line' }}>
+            <Typography
+              variant="body2"
+              color="textPrimary"
+              // align="justify"
+              style={{ whiteSpace: 'pre-line' }}
+            >
               {record.description}
             </Typography>
           </CardContent>
@@ -58,7 +66,12 @@ const Detail = () => {
           />
 
           <CardContent>
-            <Typography gutterBottom variant="h6" color="secondary" component="h4">
+            <Typography
+              gutterBottom
+              variant="h6"
+              color="secondary"
+              component="h4"
+            >
               {record.artist}
             </Typography>
 
@@ -116,7 +129,13 @@ const Detail = () => {
           </CardContent>
 
           <CardActions>
-            <Button size="small" color="primary" startIcon={<HeadsetIcon />} href={record.listenUrl} target="_blank">
+            <Button
+              size="small"
+              color="primary"
+              startIcon={<HeadsetIcon />}
+              href={record.listenUrl}
+              target="_blank"
+            >
               Listen
             </Button>
             <Button
@@ -134,7 +153,10 @@ const Detail = () => {
 
       <Grid item xs={12} sm={6} lg={4} xl={4}>
         <Card>
-          <CardHeader title={`Singles from ${record.title}`} titleTypographyProps={{ color: 'primary' }} />
+          <CardHeader
+            title={`Singles from ${record.title}`}
+            titleTypographyProps={{ color: 'primary' }}
+          />
 
           <CardContent>
             <TableContainer>
@@ -160,7 +182,9 @@ const Detail = () => {
                           {track.title}
                         </Button>
                       </TableCell>
-                      <TableCell>{moment.utc(track.duration).format('HH:mm:ss')}</TableCell>
+                      <TableCell>
+                        {moment.utc(track.duration).format('HH:mm:ss')}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

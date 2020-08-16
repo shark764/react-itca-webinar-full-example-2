@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
+import { Slide } from '@material-ui/core';
 import List from '../components/List';
 import { getRecords } from '../utils/contentful';
 import { SearchContext } from '../context/SearchContext';
 import { RecordContext } from '../context/RecordContext';
-import { Slide } from '@material-ui/core';
 import Detail from '../components/Detail';
 
 function Main() {
@@ -17,7 +17,11 @@ function Main() {
       'fields.title[match]': search,
     });
 
-    console.log(`%cCourses fetched using... "${search}":`, 'background: #ccc; color: #444;', entries);
+    console.log(
+      `%cCourses fetched using... "${search}":`,
+      'background: #ccc; color: #444;',
+      entries,
+    );
 
     setRecords(entries);
   }, [search]);
@@ -29,7 +33,13 @@ function Main() {
   return (
     <div className="App-main">
       {!selectedRecord ? (
-        <Slide direction="right" in={!selectedRecord} mountOnEnter unmountOnExit timeout={{ enter: 250, exit: 250 }}>
+        <Slide
+          direction="right"
+          in={!selectedRecord}
+          mountOnEnter
+          unmountOnExit
+          timeout={{ enter: 250, exit: 250 }}
+        >
           <div>
             <List records={records} />
           </div>

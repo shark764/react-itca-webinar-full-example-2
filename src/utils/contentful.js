@@ -11,12 +11,8 @@ export const client = contentful.createClient({
 export function getRecords(query) {
   return client
     .getEntries(query)
-    .then(result => {
-      return result.items;
-    })
-    .then(items => {
-      return dataTransformer(items);
-    })
+    .then(result => result.items)
+    .then(items => dataTransformer(items))
     .catch(err => {
       console.error(err);
       return [];
@@ -24,18 +20,14 @@ export function getRecords(query) {
 }
 
 function dataTransformer(data) {
-  return data.map(({ fields, sys }) => {
-    return {
-      ...fields,
-      image: fields.image.fields.file.url,
-      id: sys.id,
-      createdAt: sys.createdAt,
-      tracklist: fields.tracklist.map(track => {
-        return {
-          ...track.fields,
-          id: track.sys.id,
-        };
-      }),
-    };
-  });
+  return data.map(({ fields, sys }) => ({
+    ...fields,
+    image: fields.image.fields.file.url,
+    id: sys.id,
+    createdAt: sys.createdAt,
+    tracklist: fields.tracklist.map(track => ({
+      ...track.fields,
+      id: track.sys.id,
+    })),
+  }));
 }
