@@ -9,6 +9,8 @@ const List = props => {
       {props.records.map(item => {
         return <Item key={item.id} record={item} />;
       })}
+
+      <p>Here is another list of items</p>
     </div>
   );
 };

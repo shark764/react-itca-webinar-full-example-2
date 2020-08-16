@@ -4,7 +4,7 @@ const Item = props => {
   return (
     <div>
       <p>
-        {props.id} {' -- '} {props.title}
+        {props.record.id} {' -- '} {props.record.title}
       </p>
     </div>
   );
