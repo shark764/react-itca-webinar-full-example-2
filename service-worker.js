@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-itca-webinar-full-example-2/precache-manifest.f0e9a46c24120f49bf71df52e8c22bbe.js"
+  "/react-itca-webinar-full-example-2/precache-manifest.46219c5b38d5e0d3f07675158afe6272.js"
 );
 
 self.addEventListener('message', (event) => {
