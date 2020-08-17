@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-itca-webinar-full-example-2/static/css/main.838a75c2.chunk.css",
+    "main.js": "/react-itca-webinar-full-example-2/static/js/main.c0614e93.chunk.js",
+    "main.js.map": "/react-itca-webinar-full-example-2/static/js/main.c0614e93.chunk.js.map",
+    "runtime-main.js": "/react-itca-webinar-full-example-2/static/js/runtime-main.2374cdf8.js",
+    "runtime-main.js.map": "/react-itca-webinar-full-example-2/static/js/runtime-main.2374cdf8.js.map",
+    "static/js/2.48aef5f6.chunk.js": "/react-itca-webinar-full-example-2/static/js/2.48aef5f6.chunk.js",
+    "static/js/2.48aef5f6.chunk.js.map": "/react-itca-webinar-full-example-2/static/js/2.48aef5f6.chunk.js.map",
+    "index.html": "/react-itca-webinar-full-example-2/index.html",
+    "precache-manifest.f0e9a46c24120f49bf71df52e8c22bbe.js": "/react-itca-webinar-full-example-2/precache-manifest.f0e9a46c24120f49bf71df52e8c22bbe.js",
+    "service-worker.js": "/react-itca-webinar-full-example-2/service-worker.js",
+    "static/css/main.838a75c2.chunk.css.map": "/react-itca-webinar-full-example-2/static/css/main.838a75c2.chunk.css.map",
+    "static/js/2.48aef5f6.chunk.js.LICENSE.txt": "/react-itca-webinar-full-example-2/static/js/2.48aef5f6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2374cdf8.js",
+    "static/js/2.48aef5f6.chunk.js",
+    "static/css/main.838a75c2.chunk.css",
+    "static/js/main.c0614e93.chunk.js"
+  ]
+}
