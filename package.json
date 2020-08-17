@@ -1,8 +1,8 @@
 {
-  "name": "itca-webinar-10",
+  "name": "react-itca-webinar-full-example-2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://shark764.github.io/react-itca-webinar-full-example",
+  "homepage": "https://shark764.github.io/react-itca-webinar-full-example-2",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { Slide } from '@material-ui/core';
 import List from '../components/List';
-import { getRecords } from '../utils/contentful';
+import { getRecords } from '../sdk/contentful';
 import { SearchContext } from '../context/SearchContext';
 import { RecordContext } from '../context/RecordContext';
 import Detail from '../components/Detail';
@@ -20,7 +20,7 @@ function Main() {
     console.log(
       `%cCourses fetched using... "${search}":`,
       'background: #ccc; color: #444;',
-      entries,
+      entries
     );
 
     setRecords(entries);
@@ -38,8 +38,7 @@ function Main() {
           in={!selectedRecord}
           mountOnEnter
           unmountOnExit
-          timeout={{ enter: 250, exit: 250 }}
-        >
+          timeout={{ enter: 250, exit: 250 }}>
           <div>
             <List records={records} />
           </div>
@@ -52,8 +51,7 @@ function Main() {
           in={selectedRecord !== null}
           mountOnEnter
           unmountOnExit
-          timeout={{ enter: 250, exit: 250 }}
-        >
+          timeout={{ enter: 250, exit: 250 }}>
           <div>
             <Detail />
           </div>
